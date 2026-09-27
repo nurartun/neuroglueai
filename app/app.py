@@ -276,39 +276,44 @@ PROJECT = HOME / "NeuroGlue_Project"
 PLATFORM = HOME / "NeuroGlueAI_Platform"
 
 P = {
-    "poster": PROJECT / "POSTER_GORSELLERI",
-    "admet": PROJECT / "admet",
+    # ═══ REPO İÇİ (Streamlit Cloud + Yerel uyumlu) ═══
     "pfig": PLATFORM / "assets" / "figures",
     "pdata": PLATFORM / "data",
-    # Beyin SVG
+    
+    # Beyin
     "brain_anim": PLATFORM / "assets" / "figures" / "brain_animated.svg",
     "brain_static": PLATFORM / "assets" / "figures" / "brain_animated.svg",
-    # 3D ligand
-    "d049_sdf": PROJECT / "D049_VIZ" / "d049_3D.sdf",
-    "d049_pdb": PROJECT / "ternary_ready" / "049_ligand.pdb",
-    # Yeni üçlü kompleks render (dodgerblue + deeppink)
+    
+    # 3D molekül
+    "d049_sdf": PLATFORM / "assets" / "d049" / "d049_3D.sdf",
+    "d049_pdb": PLATFORM / "assets" / "d049" / "d049_3D.pdb",
+    
+    # Üçlü kompleks
     "ternary_dodger": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
-    "ternary_dodger_alt": PROJECT / "STREAMLIT_RENDER" / "DODGER_FINAL.png",
-    "ternary_old": PROJECT / "POSTER_GORSELLERI" / "05_summary" / "final_nature_2000.png",
-    # MD video
-    "video": PROJECT / "STREAMLIT_ASSETS" / "md_real_loop.mp4",
-    "video_alt": PROJECT / "STREAMLIT_ASSETS" / "md_100ns_30fps.mp4",
-    "video_preview": PROJECT / "STREAMLIT_ASSETS" / "md_preview.gif",
-    # Poster diğer görselleri
-    "steric_wide": PROJECT / "POSTER_GORSELLERI" / "01_structure" / "01_steric_wide.png",
-    "steric_interface": PROJECT / "POSTER_GORSELLERI" / "01_structure" / "03_steric_interface.png",
-    "docking_compare": PROJECT / "POSTER_GORSELLERI" / "02_docking" / "crbn_pocket_comparison.png",
-    "orca": PROJECT / "POSTER_GORSELLERI" / "03_quantum" / "orca_dft_full_analysis.png",
-    "md_panel": PROJECT / "POSTER_GORSELLERI" / "04_md" / "md_production_5panel.png",
-    "mmgbsa": PROJECT / "POSTER_GORSELLERI" / "04_md" / "mmgbsa_250frame_analysis.png",
-    "d049_2d": PROJECT / "POSTER_GORSELLERI" / "05_summary" / "d049_2D.png",
-    "kbb_radar": PROJECT / "POSTER_GORSELLERI" / "05_summary" / "kbb_radar.png",
-    "roadmap": PROJECT / "POSTER_GORSELLERI" / "05_summary" / "roadmap_4step.png",
-    "platform_exp": PROJECT / "POSTER_GORSELLERI" / "05_summary" / "platform_expansion.png",
-    # Yaygın etki
-    "impact_clinical": PROJECT / "YAYGIN_ETKI" / "01_klinik_etki.png",
-    "impact_economic": PROJECT / "YAYGIN_ETKI" / "02_ekonomik_etki.png",
-    "impact_platform": PROJECT / "YAYGIN_ETKI" / "03_platform_vizyon_v2.png",
+    "ternary_dodger_alt": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
+    "ternary_old": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
+    
+    # Video
+    "video": PLATFORM / "assets" / "videos" / "md_real_loop.mp4",
+    "video_alt": PLATFORM / "assets" / "videos" / "md_100ns_30fps.mp4",
+    "video_preview": PLATFORM / "assets" / "videos" / "md_preview.gif",
+    
+    # Poster görselleri
+    "steric_wide": PLATFORM / "assets" / "poster" / "01_structure" / "01_steric_wide.png",
+    "steric_interface": PLATFORM / "assets" / "poster" / "01_structure" / "03_steric_interface.png",
+    "docking_compare": PLATFORM / "assets" / "poster" / "02_docking" / "crbn_pocket_comparison.png",
+    "orca": PLATFORM / "assets" / "poster" / "03_quantum" / "orca_dft_full_analysis.png",
+    "md_panel": PLATFORM / "assets" / "poster" / "04_md" / "md_production_5panel.png",
+    "mmgbsa": PLATFORM / "assets" / "poster" / "04_md" / "mmgbsa_250frame_analysis.png",
+    "d049_2d": PLATFORM / "assets" / "poster" / "05_summary" / "d049_2D.png",
+    "kbb_radar": PLATFORM / "assets" / "poster" / "05_summary" / "kbb_radar.png",
+    "roadmap": PLATFORM / "assets" / "poster" / "05_summary" / "roadmap_4step.png",
+    "platform_exp": PLATFORM / "assets" / "poster" / "05_summary" / "platform_expansion.png",
+    
+    # Yaygın etki (varsa)
+    "impact_clinical": PLATFORM / "assets" / "poster" / "05_summary" / "01_klinik_etki.png",
+    "impact_economic": PLATFORM / "assets" / "poster" / "05_summary" / "02_ekonomik_etki.png",
+    "impact_platform": PLATFORM / "assets" / "poster" / "05_summary" / "03_platform_vizyon_v2.png",
 }
 
 # ═══════════════════════════════════════════════════════════════════════════
