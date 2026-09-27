@@ -1,10 +1,82 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit secrets
 .streamlit/secrets.toml
+
+# Virtual env
 venv/
 env/
+ENV/
+
+# Loglar
 *.log
+logs/
+
+# Arşivler
 *.tar.bz2
+*.tar.gz
 *.zip
+
+# Eski yedekler
+app/app_OLD_*.py
+app/*_backup.py
+
+# ═══════════════════════════════════════════════════
+# BÜYÜK VERİ KLASÖRLERİ — GIT'E GİRMEZ
+# ═══════════════════════════════════════════════════
+data/md/
+data/ai/
+data/admet/
+data/haddock/
+data/cluspro/
+data/boltz/
+data/orca/
+data/depmap/
+assets/poster/
+
+# GROMACS / MD dosyaları
+*.frc
+*.dcd
+*.xtc
+*.trr
+*.nc
+*.prmtop
+*.inpcrd
+*.rst7
+*.gro
+*.edr
+*.cpt
+*.tpr
+*.log
+
+# Model ağırlıkları
+*.pt
+*.pth
+*.model
+*.h5
+*.onnx
+*.ckpt
+
+# ORCA çıktıları
+*.gbw
+*.densities
+*.scfpcm
+*.cpcm
+*.vpot
+*.bas0
+*.bas1
+
+# Büyük PNG (>5 MB)
+assets/figures/ternary_20260927_*.png
