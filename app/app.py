@@ -276,44 +276,36 @@ PROJECT = HOME / "NeuroGlue_Project"
 PLATFORM = HOME / "NeuroGlueAI_Platform"
 
 P = {
-    # ═══ REPO İÇİ (Streamlit Cloud + Yerel uyumlu) ═══
-    "pfig": PLATFORM / "assets" / "figures",
-    "pdata": PLATFORM / "data",
+    # ═══ APP YANINDAKİ assets/ ═══
+    "pfig": ASSETS_DIR / "figures",
+    "brain_anim": ASSETS_DIR / "figures" / "brain_animated.svg",
+    "brain_static": ASSETS_DIR / "figures" / "brain_animated.svg",
     
-    # Beyin
-    "brain_anim": PLATFORM / "assets" / "figures" / "brain_animated.svg",
-    "brain_static": PLATFORM / "assets" / "figures" / "brain_animated.svg",
+    "d049_sdf": ASSETS_DIR / "d049" / "d049_3D.sdf",
+    "d049_pdb": ASSETS_DIR / "d049" / "d049_3D.pdb",
     
-    # 3D molekül
-    "d049_sdf": PLATFORM / "assets" / "d049" / "d049_3D.sdf",
-    "d049_pdb": PLATFORM / "assets" / "d049" / "d049_3D.pdb",
+    "ternary_dodger": ASSETS_DIR / "figures" / "ternary_20260927_030510.png",
+    "ternary_dodger_alt": ASSETS_DIR / "figures" / "ternary_20260927_030510.png",
+    "ternary_old": ASSETS_DIR / "figures" / "ternary_20260927_030510.png",
     
-    # Üçlü kompleks
-    "ternary_dodger": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
-    "ternary_dodger_alt": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
-    "ternary_old": PLATFORM / "assets" / "figures" / "ternary_20260927_030510.png",
+    "video": ASSETS_DIR / "videos" / "md_real_loop.mp4",
+    "video_alt": ASSETS_DIR / "videos" / "md_100ns_30fps.mp4",
+    "video_preview": ASSETS_DIR / "videos" / "md_preview.gif",
     
-    # Video
-    "video": PLATFORM / "assets" / "videos" / "md_real_loop.mp4",
-    "video_alt": PLATFORM / "assets" / "videos" / "md_100ns_30fps.mp4",
-    "video_preview": PLATFORM / "assets" / "videos" / "md_preview.gif",
+    "steric_wide": ASSETS_DIR / "poster" / "01_structure" / "01_steric_wide.png",
+    "steric_interface": ASSETS_DIR / "poster" / "01_structure" / "03_steric_interface.png",
+    "docking_compare": ASSETS_DIR / "poster" / "02_docking" / "crbn_pocket_comparison.png",
+    "orca": ASSETS_DIR / "poster" / "03_quantum" / "orca_dft_full_analysis.png",
+    "md_panel": ASSETS_DIR / "poster" / "04_md" / "md_production_5panel.png",
+    "mmgbsa": ASSETS_DIR / "poster" / "04_md" / "mmgbsa_250frame_analysis.png",
+    "d049_2d": ASSETS_DIR / "poster" / "05_summary" / "d049_2D.png",
+    "kbb_radar": ASSETS_DIR / "poster" / "05_summary" / "kbb_radar.png",
+    "roadmap": ASSETS_DIR / "poster" / "05_summary" / "roadmap_4step.png",
+    "platform_exp": ASSETS_DIR / "poster" / "05_summary" / "platform_expansion.png",
     
-    # Poster görselleri
-    "steric_wide": PLATFORM / "assets" / "poster" / "01_structure" / "01_steric_wide.png",
-    "steric_interface": PLATFORM / "assets" / "poster" / "01_structure" / "03_steric_interface.png",
-    "docking_compare": PLATFORM / "assets" / "poster" / "02_docking" / "crbn_pocket_comparison.png",
-    "orca": PLATFORM / "assets" / "poster" / "03_quantum" / "orca_dft_full_analysis.png",
-    "md_panel": PLATFORM / "assets" / "poster" / "04_md" / "md_production_5panel.png",
-    "mmgbsa": PLATFORM / "assets" / "poster" / "04_md" / "mmgbsa_250frame_analysis.png",
-    "d049_2d": PLATFORM / "assets" / "poster" / "05_summary" / "d049_2D.png",
-    "kbb_radar": PLATFORM / "assets" / "poster" / "05_summary" / "kbb_radar.png",
-    "roadmap": PLATFORM / "assets" / "poster" / "05_summary" / "roadmap_4step.png",
-    "platform_exp": PLATFORM / "assets" / "poster" / "05_summary" / "platform_expansion.png",
-    
-    # Yaygın etki (varsa)
-    "impact_clinical": PLATFORM / "assets" / "poster" / "05_summary" / "01_klinik_etki.png",
-    "impact_economic": PLATFORM / "assets" / "poster" / "05_summary" / "02_ekonomik_etki.png",
-    "impact_platform": PLATFORM / "assets" / "poster" / "05_summary" / "03_platform_vizyon_v2.png",
+    "impact_clinical": ASSETS_DIR / "poster" / "05_summary" / "01_klinik_etki.png",
+    "impact_economic": ASSETS_DIR / "poster" / "05_summary" / "02_ekonomik_etki.png",
+    "impact_platform": ASSETS_DIR / "poster" / "05_summary" / "03_platform_vizyon_v2.png",
 }
 
 # ═══════════════════════════════════════════════════════════════════════════
