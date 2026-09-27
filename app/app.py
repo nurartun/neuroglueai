@@ -560,9 +560,9 @@ if page == "Ana Sayfa":
     c1, c2, c3 = st.columns([1, 2.5, 1])
     with c2:
         # Cache buster: dosya modifikasyon zamanını kullan
-        render_path = Path("/home/ebyu/NeuroGlue_Project/STREAMLIT_RENDER/DODGER_FINAL.png")
+        render_path = Path(str(PROJECT) + "//STREAMLIT_RENDER/DODGER_FINAL.png")
         if not render_path.exists():
-            render_path = Path("/home/ebyu/NeuroGlueAI_Platform/assets/figures/ternary_20260927_030510.png")
+            render_path = P["ternary_dodger"] if P.get("ternary_dodger") and P["ternary_dodger"].exists() else Path(__file__).parent.parent / "assets" / "figures" / "ternary_20260927_030510.png"
         
         if render_path.exists():
             # Dosya boyutunu ve mtime'ı cache buster olarak kullan
