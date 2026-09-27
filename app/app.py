@@ -272,8 +272,16 @@ h1, h2, h3, h4, h5, h6 { color: #E8F1F8 !important; }
 # PATHS
 # ═══════════════════════════════════════════════════════════════════════════
 HOME = Path.home()
-PROJECT = HOME / "NeuroGlue_Project"
-PLATFORM = HOME / "NeuroGlueAI_Platform"
+REPO_ROOT = Path(__file__).parent.resolve()
+ASSETS_DIR = REPO_ROOT / "assets"
+LOCAL_PROJECT = HOME / "NeuroGlue_Project"
+
+if ASSETS_DIR.exists():
+    PLATFORM = REPO_ROOT
+    PROJECT = LOCAL_PROJECT if LOCAL_PROJECT.exists() else REPO_ROOT
+else:
+    PLATFORM = HOME / "NeuroGlueAI_Platform"
+    PROJECT = LOCAL_PROJECT
 
 P = {
     # ═══ APP YANINDAKİ assets/ ═══
