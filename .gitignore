@@ -80,3 +80,8 @@ assets/poster/
 
 # Büyük PNG (>5 MB)
 assets/figures/ternary_20260927_*.png
+
+# Yedek dosyalar
+app/app_before_*.py
+app/app_OLD_*.py
+app/*_backup.py
