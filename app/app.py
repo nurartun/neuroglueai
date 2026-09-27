@@ -282,7 +282,7 @@ P = {
     "pdata": PLATFORM / "data",
     # Beyin SVG
     "brain_anim": PLATFORM / "assets" / "figures" / "brain_animated.svg",
-    "brain_static": PLATFORM / "assets" / "figures" / "brain_biorender.svg",
+    "brain_static": PLATFORM / "assets" / "figures" / "brain_animated.svg",
     # 3D ligand
     "d049_sdf": PROJECT / "D049_VIZ" / "d049_3D.sdf",
     "d049_pdb": PROJECT / "ternary_ready" / "049_ligand.pdb",
