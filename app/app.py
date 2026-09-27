@@ -182,9 +182,9 @@ P = {
     "d049_sdf": ASSETS_DIR / "d049" / "d049_3D.sdf",
     "d049_pdb": ASSETS_DIR / "d049" / "d049_3D.pdb",
     
-    "ternary_dodger": ASSETS_DIR / "figures" / "ternary_dodger_NEW.png",
-    "ternary_dodger_alt": ASSETS_DIR / "figures" / "ternary_dodger_NEW.png",
-    "ternary_old": ASSETS_DIR / "figures" / "ternary_dodger_NEW.png",
+    "ternary_dodger": ASSETS_DIR / "figures" / "ternary_dodger.png",
+    "ternary_dodger_alt": ASSETS_DIR / "figures" / "ternary_dodger.png",
+    "ternary_old": ASSETS_DIR / "figures" / "ternary_dodger.png",
     
     "video": ASSETS_DIR / "videos" / "md_real_loop.mp4",
     "video_alt": ASSETS_DIR / "videos" / "md_100ns_30fps.mp4",
@@ -455,7 +455,7 @@ if page == "Ana Sayfa":
     section("Üçlü Kompleks Render", "◉")
     c1, c2, c3 = st.columns([1, 2.5, 1])
     with c2:
-        render_path = ASSETS_DIR / "figures" / "ternary_dodger_NEW.png"
+        render_path = ASSETS_DIR / "figures" / "ternary_dodger.png"
         
         if render_path.exists():
             mtime = int(render_path.stat().st_mtime)
