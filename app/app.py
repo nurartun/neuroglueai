@@ -462,8 +462,7 @@ if page == "Ana Sayfa":
             st.image(
                 str(render_path),
                 caption="mIDH1 (dodgerblue) • CRBN (deeppink) • D-049 (sarı)",
-                use_container_width=True,
-                key=f"ternary_{mtime}",
+                use_container_width=True
             )
         else:
             info(f"⚠️ Render bulunamadı: {render_path.name}", "w")
