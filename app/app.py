@@ -37,236 +37,126 @@ st.set_page_config(
 # ═══════════════════════════════════════════════════════════════════════════
 # KESKİN DARK THEME — Blur YOK, Net Renkler
 # ═══════════════════════════════════════════════════════════════════════════
-st.markdown("""
-<style>
-/* ═══ ANA ARKA PLAN — Keskin solid ═══ */
-.stApp {
-    background: #050810;
-    color: #E8F1F8;
-}
+IS_LIGHT = st.session_state.get("IS_LIGHT", False)
 
-html, body, [class*="css"] {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-}
-
-/* ═══ ANA BAŞLIK ═══ */
-.main-title {
-    font-size: 4rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #00E5FF 0%, #7C4DFF 50%, #FF4081 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.1;
-    letter-spacing: -2px;
-    text-align: center;
-    margin-bottom: 0.3rem;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: #00E5FF;
-    text-align: center;
-    font-style: italic;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 0.3rem;
-    font-weight: 600;
-}
-
-/* ═══ HERO CARD ═══ */
-.hero-card {
-    background: #0A1024;
-    padding: 2.2rem 2.5rem;
-    border-radius: 16px;
-    border: 1px solid #00E5FF;
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
-    text-align: center;
-    margin: 1.5rem 0;
-}
-
-/* ═══ KPI KARTLARI ═══ */
-.kpi-neon {
-    background: #0A1024;
-    padding: 1.4rem 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #00E5FF;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.kpi-neon::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px; height: 100%;
-    background: #00E5FF;
-}
-.kpi-neon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(0, 229, 255, 0.5);
-}
-.kpi-value {
-    font-size: 2.2rem;
-    font-weight: 900;
-    line-height: 1;
-    background: linear-gradient(135deg, #00E5FF, #FF4081);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -1px;
-}
-.kpi-label {
-    font-size: 0.78rem;
-    color: #00E5FF;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 0.6rem;
-    font-weight: 700;
-}
-.kpi-sub {
-    font-size: 0.72rem;
-    color: #8899AA;
-    margin-top: 0.3rem;
-}
-
-/* ═══ BÖLÜM BAŞLIKLARI ═══ */
-.section-neon {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    padding: 0.7rem 0 0.7rem 1.2rem;
-    margin: 1.8rem 0 1rem 0;
-    border-left: 4px solid #00E5FF;
-    background: #0A1024;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-}
-
-/* ═══ INFO KUTULARI ═══ */
-.info-glass {
-    padding: 1.2rem 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
-    background: #0A1024;
-    border-left: 4px solid #00E5FF;
-    color: #E8F1F8;
-    line-height: 1.7;
-}
-.info-glass.s { border-left-color: #27AE60; color: #B8E6C9; }
-.info-glass.w { border-left-color: #F39C12; color: #FCE4B6; }
-.info-glass.d { border-left-color: #FF4081; color: #FFB3C6; }
-.info-glass.i { border-left-color: #00E5FF; color: #B3E5FC; }
-
-/* ═══ SIDEBAR ═══ */
-[data-testid="stSidebar"] {
-    background: #050810;
-    border-right: 1px solid #00E5FF;
-}
-[data-testid="stSidebar"] * { color: #E8F1F8 !important; }
-[data-testid="stSidebar"] hr {
-    border-color: rgba(0, 229, 255, 0.3);
-}
-
-/* ═══ METRIC ═══ */
-[data-testid="stMetricValue"] {
-    color: #00E5FF !important;
-    font-weight: 900 !important;
-}
-[data-testid="stMetricLabel"] {
-    color: #7CB9E8 !important;
-}
-
-/* ═══ BUTONLAR ═══ */
-.stButton > button {
-    background: #00E5FF;
-    color: #050810 !important;
-    border: none;
-    font-weight: 700;
-    padding: 0.6rem 1.5rem;
-    border-radius: 8px;
-    transition: all 0.2s;
-}
-.stButton > button:hover {
-    background: #FF4081;
-    color: #FFFFFF !important;
-    box-shadow: 0 0 20px rgba(255, 64, 129, 0.6);
-}
-
-/* ═══ PROGRESS BAR ═══ */
-.stProgress > div > div > div {
-    background: linear-gradient(90deg, #00E5FF, #FF4081);
-}
-
-/* ═══ TABS ═══ */
-.stTabs [data-baseweb="tab-list"] { gap: 8px; }
-.stTabs [data-baseweb="tab"] {
-    background: #0A1024;
-    border-radius: 8px;
-    color: #00E5FF !important;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    border: 1px solid rgba(0, 229, 255, 0.3);
-}
-.stTabs [aria-selected="true"] {
-    background: #00E5FF !important;
-    color: #050810 !important;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
-}
-
-/* ═══ DATAFRAME ═══ */
-[data-testid="stDataFrame"] {
-    border: 1px solid rgba(0, 229, 255, 0.3);
-    border-radius: 8px;
-}
-
-/* ═══ CODE BLOCK ═══ */
-.stCodeBlock, pre, code {
-    background: #0A1024 !important;
-    border: 1px solid rgba(0, 229, 255, 0.3);
-    color: #00E5FF !important;
-}
-
-/* ═══ EXPANDER ═══ */
-.streamlit-expanderHeader {
-    background: #0A1024 !important;
-    color: #E8F1F8 !important;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 229, 255, 0.3);
-}
-
-/* ═══ HEADINGS ═══ */
-h1, h2, h3, h4, h5, h6 { color: #E8F1F8 !important; }
-
-/* ═══ PULSE ANIMASYONU (minimal) ═══ */
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-.pulse-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #27AE60;
-    border-radius: 50%;
-    margin-right: 6px;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-/* ═══ SCROLLBAR ═══ */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #050810; }
-::-webkit-scrollbar-thumb {
-    background: #00E5FF;
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover { background: #FF4081; }
-
-/* ═══ BLUR KALDIRILDI ═══ */
-/* Hiçbir backdrop-filter, blur, animated gradient yok */
-</style>
-""", unsafe_allow_html=True)
+if IS_LIGHT:
+    st.markdown("""
+    <style>
+    .stApp { background: #FFFFFF !important; color: #1C2833 !important; }
+    .main-title {
+        font-size: 4rem; font-weight: 900;
+        background: linear-gradient(90deg, #0066CC, #7C3AED, #DC2626);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        text-align: center; letter-spacing: -2px;
+    }
+    .subtitle {
+        font-size: 1.25rem; color: #0066CC; text-align: center;
+        font-style: italic; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;
+    }
+    .hero-card {
+        background: #F8FAFC; padding: 2.2rem 2.5rem; border-radius: 16px;
+        border: 2px solid #0066CC; box-shadow: 0 4px 20px rgba(0,102,204,0.15);
+        text-align: center; margin: 1.5rem 0;
+    }
+    .kpi-neon {
+        background: #F8FAFC; padding: 1.4rem 1.5rem; border-radius: 12px;
+        border: 2px solid #0066CC; box-shadow: 0 4px 15px rgba(0,102,204,0.12);
+        position: relative; overflow: hidden;
+    }
+    .kpi-neon::before {
+        content: ""; position: absolute; top: 0; left: 0;
+        width: 4px; height: 100%; background: #0066CC;
+    }
+    .kpi-value {
+        font-size: 2.2rem; font-weight: 900; line-height: 1;
+        background: linear-gradient(135deg, #0066CC, #DC2626);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .kpi-label { font-size: 0.78rem; color: #0066CC; text-transform: uppercase;
+                 letter-spacing: 2px; margin-top: 0.6rem; font-weight: 700; }
+    .kpi-sub { font-size: 0.72rem; color: #64748B; margin-top: 0.3rem; }
+    .section-neon {
+        font-size: 1.5rem; font-weight: 800; color: #1C2833;
+        padding: 0.7rem 0 0.7rem 1.2rem; margin: 1.8rem 0 1rem 0;
+        border-left: 4px solid #0066CC; background: #F8FAFC; border-radius: 4px;
+    }
+    .info-glass {
+        padding: 1.2rem 1.5rem; border-radius: 10px; margin: 1rem 0;
+        background: #F8FAFC; border-left: 4px solid #0066CC;
+        color: #1C2833; line-height: 1.7;
+    }
+    .info-glass.s { border-left-color: #16A34A; color: #166534; background: #F0FDF4; }
+    .info-glass.w { border-left-color: #EA580C; color: #9A3412; background: #FFF7ED; }
+    .info-glass.d { border-left-color: #DC2626; color: #991B1B; background: #FEF2F2; }
+    .info-glass.i { border-left-color: #0066CC; color: #1E40AF; background: #EFF6FF; }
+    [data-testid="stSidebar"] { background: #F8FAFC !important; border-right: 2px solid #0066CC; }
+    [data-testid="stSidebar"] * { color: #1C2833 !important; }
+    h1, h2, h3, h4, h5, h6 { color: #1C2833 !important; }
+    .stCodeBlock, pre, code {
+        background: #F8FAFC !important; border: 1px solid #CBD5E1; color: #0066CC !important;
+    }
+    [data-testid="stMetricValue"] { color: #0066CC !important; }
+    </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <style>
+    .stApp { background: #050810; color: #E8F1F8; }
+    .main-title {
+        font-size: 4rem; font-weight: 900;
+        background: linear-gradient(90deg, #00E5FF, #7C4DFF, #FF4081);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        text-align: center; letter-spacing: -2px;
+    }
+    .subtitle {
+        font-size: 1.25rem; color: #00E5FF; text-align: center;
+        font-style: italic; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;
+    }
+    .hero-card {
+        background: #0A1024; padding: 2.2rem 2.5rem; border-radius: 16px;
+        border: 1px solid #00E5FF; box-shadow: 0 0 30px rgba(0,229,255,0.25);
+        text-align: center; margin: 1.5rem 0;
+    }
+    .kpi-neon {
+        background: #0A1024; padding: 1.4rem 1.5rem; border-radius: 12px;
+        border: 1px solid #00E5FF; box-shadow: 0 0 20px rgba(0,229,255,0.15);
+        position: relative; overflow: hidden;
+    }
+    .kpi-neon::before {
+        content: ""; position: absolute; top: 0; left: 0;
+        width: 4px; height: 100%; background: #00E5FF;
+    }
+    .kpi-value {
+        font-size: 2.2rem; font-weight: 900; line-height: 1;
+        background: linear-gradient(135deg, #00E5FF, #FF4081);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .kpi-label { font-size: 0.78rem; color: #00E5FF; text-transform: uppercase;
+                 letter-spacing: 2px; margin-top: 0.6rem; font-weight: 700; }
+    .kpi-sub { font-size: 0.72rem; color: #8899AA; margin-top: 0.3rem; }
+    .section-neon {
+        font-size: 1.5rem; font-weight: 800; color: #FFFFFF;
+        padding: 0.7rem 0 0.7rem 1.2rem; margin: 1.8rem 0 1rem 0;
+        border-left: 4px solid #00E5FF; background: #0A1024; border-radius: 4px;
+    }
+    .info-glass {
+        padding: 1.2rem 1.5rem; border-radius: 10px; margin: 1rem 0;
+        background: #0A1024; border-left: 4px solid #00E5FF;
+        color: #E8F1F8; line-height: 1.7;
+    }
+    .info-glass.s { border-left-color: #27AE60; color: #B8E6C9; }
+    .info-glass.w { border-left-color: #F39C12; color: #FCE4B6; }
+    .info-glass.d { border-left-color: #FF4081; color: #FFB3C6; }
+    .info-glass.i { border-left-color: #00E5FF; color: #B3E5FC; }
+    [data-testid="stSidebar"] { background: #050810; border-right: 1px solid #00E5FF; }
+    [data-testid="stSidebar"] * { color: #E8F1F8 !important; }
+    h1, h2, h3, h4, h5, h6 { color: #E8F1F8 !important; }
+    .stCodeBlock, pre, code {
+        background: #0A1024 !important; border: 1px solid rgba(0,229,255,0.3); color: #00E5FF !important;
+    }
+    [data-testid="stMetricValue"] { color: #00E5FF !important; }
+    </style>
+    """, unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PATHS
@@ -301,6 +191,7 @@ P = {
     "video_preview": ASSETS_DIR / "videos" / "md_preview.gif",
     
     "steric_wide": ASSETS_DIR / "poster" / "01_structure" / "01_steric_wide.png",
+    "steric_wide_dark": ASSETS_DIR / "poster" / "01_structure" / "01_steric_wide_dark.png",
     "steric_interface": ASSETS_DIR / "poster" / "01_structure" / "03_steric_interface.png",
     "docking_compare": ASSETS_DIR / "poster" / "02_docking" / "crbn_pocket_comparison.png",
     "orca": ASSETS_DIR / "poster" / "03_quantum" / "orca_dft_full_analysis.png",
@@ -564,23 +455,18 @@ if page == "Ana Sayfa":
     section("Üçlü Kompleks Render", "◉")
     c1, c2, c3 = st.columns([1, 2.5, 1])
     with c2:
-        # Cache buster: dosya modifikasyon zamanını kullan
-        render_path = Path(str(PROJECT) + "//STREAMLIT_RENDER/DODGER_FINAL.png")
-        if not render_path.exists():
-            render_path = P["ternary_dodger"] if P.get("ternary_dodger") and P["ternary_dodger"].exists() else Path(__file__).parent.parent / "assets" / "figures" / "ternary_20260927_030510.png"
+        render_path = ASSETS_DIR / "figures" / "ternary_20260927_030510.png"
         
         if render_path.exists():
-            # Dosya boyutunu ve mtime'ı cache buster olarak kullan
-            mtime = render_path.stat().st_mtime
-            size = render_path.stat().st_size
+            mtime = int(render_path.stat().st_mtime)
             st.image(
                 str(render_path),
-                caption=f"mIDH1 (dodgerblue) • CRBN (deeppink) • D-049 (sarı) • {size//1024}KB",
+                caption="mIDH1 (dodgerblue) • CRBN (deeppink) • D-049 (sarı)",
                 use_container_width=True,
-                key=f"ternary_{mtime}_{size}"  # ← Cache buster
+                key=f"ternary_{mtime}",
             )
         else:
-            info(f"⚠️ Render bulunamadı: {render_path}", "w")
+            info(f"⚠️ Render bulunamadı: {render_path.name}", "w")
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SAYFA: PROBLEM
@@ -855,7 +741,10 @@ elif page == "Sterik Takoz":
              "</table>", "d")
 
     section("Sterik Takoz Görselleri", "🖼️")
-    show_img("steric_wide", "Sterik takoz — geniş görünüm")
+    if st.session_state.get("IS_LIGHT", False):
+        show_img("steric_wide", "Apo arayüz — tri-Trp sterik çakışma (ClusPro model.000.06)")
+    else:
+        show_img("steric_wide_dark", "Apo arayüz — tri-Trp sterik çakışma (ClusPro model.000.06)")
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SAYFA: KLİNİK & EKONOMİK
